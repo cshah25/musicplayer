@@ -1,7 +1,12 @@
-from tkinter import *
-from tkinter import ttk
+import tkinter as tk
 from tkinter import filedialog
-from playsound import playsound
+from tkinter.ttk import Progressbar
+import customtkinter as ctk
+from mutagen.mp3 import MP3
+import threading
+import pygame
+import time
+import os
 
 def play():
     pass
@@ -36,24 +41,13 @@ def deletesongs():
     pass
 
 def main():
-    root = Tk()
-    root.geometry('3000x1500')
-    root.minsize(500, 500)
-    root.title('Music Player')
+    # Main Window
+    window = tk.Tk()
+    window.title("Music Player CS")
+    window.geometry("600x500")
 
-    my_menu=Menu(root)
-    root.config(menu=my_menu)
-    add_song_menu=Menu(my_menu)
-    my_menu.add_cascade(label="Menu",menu=add_song_menu)
-    add_song_menu.add_command(label="Add songs",command=addsongs)
-    add_song_menu.add_command(label="Delete song",command=deletesongs)
-
-    frm = ttk.Frame(root, padding=10)
-    frm.grid()
-    ttk.Label(frm, text="Hello World!").grid(column=0, row=0)
-    ttk.Button(frm, text="Quit", command=root.destroy).grid(column=1, row=0)
-    root.mainloop()
-
+    # Lable
+    lbl_title = tk.Label
 
 if __name__ == "__main__":
     main()
